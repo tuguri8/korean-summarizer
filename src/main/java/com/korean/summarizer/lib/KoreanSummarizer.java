@@ -25,6 +25,16 @@ public class KoreanSummarizer {
     public KoreanSummarizer() {
     }
 
+    // Get Top 5 Keywords from Text
+    public List<String> getKeywords(String text) {
+        List<String> splittedSentences = splitParagraph(text);
+        List<List<String>> taggedSentenceList = splittedSentences.stream()
+                                                                 .map(this::tagging)
+                                                                 .collect(Collectors.toList());
+        return getKeywordListFromNews(taggedSentenceList);
+    }
+
+    // Summarize Text to 3 sentences
     public String summarize(String text) {
         List<String> splittedSentences = splitParagraph(text);
         List<List<String>> taggedSentenceList = splittedSentences.stream()
