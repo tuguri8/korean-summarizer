@@ -1,4 +1,4 @@
-package com.korean.summarizer.lib;
+package com.github.tuguri8.lib;
 
 import org.openkoreantext.processor.KoreanPosJava;
 import org.openkoreantext.processor.KoreanTokenJava;
